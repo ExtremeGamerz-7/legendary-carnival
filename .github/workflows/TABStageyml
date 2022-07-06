@@ -1,5 +1,5 @@
 
-name: CI
+name: TABStage
 
 on:
   workflow_dispatch:
